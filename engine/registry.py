@@ -7,7 +7,7 @@ class ToolRegistry:
     def register(self, name: str, func: Callable):
         """Registers a tool with a given name."""
         self._tools[name] = func
-
+ 
     def get_tool(self, name: str) -> Callable:
         """Retrieves a tool by name."""
         if name not in self._tools:

@@ -5,12 +5,12 @@ class NodeDefinition(BaseModel):
     id: str
     tool_name: str  # The name of the function/tool to execute
     parameters: Dict[str, Any] = Field(default_factory=dict)
-
+ 
 class EdgeDefinition(BaseModel):
     from_node: str
     to_node: str
     condition: Optional[str] = None  # Python expression string, e.g., "state['value'] > 10"
-
+ 
 class GraphDefinition(BaseModel):
     nodes: List[NodeDefinition]
     edges: List[EdgeDefinition]
